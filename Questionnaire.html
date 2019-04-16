@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit 7</title>
+ 
+</head>
+
+<body>
+<h1>Questionnaire</h1>
+
+  <script type="text/javascript">
+
+
+  	var name = prompt("Please enter your name", "");
+  	var address = prompt("Please enter your address", "");
+  	var job = prompt("Please enter your occupation", "");
+
+  	userInfo = [name, address, job];
+
+  	document.write("<p>Thank you for your information! You supplied this information:" + "</p>");
+
+	for (var count = 0; count < userInfo.length; count++){
+		document.write("<i>" + userInfo[count] + "</i><br/>");
+	}
+
+
+  </script>
+</body>
+</html>
