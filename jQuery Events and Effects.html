@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Submit Form</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="canvasStyles.css" media="screen">
+</head>
+
+<body>
+
+  <form method="POST" action="..." onsubmit="
+  if(form_being_submitted) {
+    alert('The form is being submitted, please wait a moment...');
+    myButton.disabled = true;
+    return false;
+  }
+  if(checkForm(this)) {
+    myButton.value = 'Submitting form...';
+    form_being_submitted = true;
+    return true;
+  }
+  return false;
+">
+...
+<p>First Name: <input type="text" size="32" required name="firstname"></p>
+<p>Last Name: <input type="text" size="32" required name="lastname"></p>
+<p><input type="submit" name="myButton">
+<input type="button" value="Reset Button" onclick="resetForm(this.form);"></p>
+</form>
+  <script type="text/javascript">
+
+  var form_being_submitted = false; // global variable
+
+  function checkForm(form)
+  {
+    if(form.firstname.value == "") {
+      alert("Please enter your first and last names");
+      form.firstname.focus();
+      return false;
+    }
+    if(form.lastname.value == "") {
+      alert("Please enter your first and last names");
+      form.lastname.focus();
+      return false;
+    }
+    return true;
+  }
+
+  function resetForm(form)
+  {
+    form.myButton.disabled = false;
+    form.myButton.value = "Submit";
+    form_being_submitted = false;
+  }
+
+</script>
+<br><br>
+    <footer>
+      © Alexandra Gromova Advanced Programming 2019
+    </footer>
+</body>
+</html>
