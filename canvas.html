@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Canvas Sample</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="canvasStyles.css" media="screen">
+</head>
+
+<body>
+  <div id="mainDiv">
+    <header>
+      <h3>A Sample Canvas</h3>
+    </header>
+    
+    <section>
+      <h4>Here is my canvas canvas tag:</h4>
+      <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;">Your browser does not support the HTML5 canvas tag.
+</canvas>
+    </section>
+    
+    <br><br>
+    <footer>
+      © Alexandra Gromova Advanced Programming 2019
+    </footer>
+  </div>
+  
+  <script>
+    var c = document.getElementById('myCanvas');
+    var ctx = c.getContext("2d");
+
+    // Main face big circle
+
+    ctx.beginPath();
+    ctx.arc(150, 150, 100, 0, 2 * Math.PI);
+    ctx.fillStyle = "lime";
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.stroke();  
+    ctx.closePath(); 
+    
+    // Smile line
+
+    ctx.beginPath();
+    ctx.moveTo(100, 200);
+    ctx.lineTo(200, 180);
+    ctx.lineWidth = 10;
+    ctx.stroke();
+    ctx.closePath();
+
+    // Left eye
+
+    ctx.beginPath();
+    ctx.arc(115, 115, 20, 0, 2 * Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+
+    // Right eye
+
+    ctx.beginPath();
+    ctx.arc(185, 115, 20, 0, 2 * Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+
+  </script>
+
+</body>
+</html>
